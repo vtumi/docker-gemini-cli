@@ -15,7 +15,7 @@ COPY --from=builder /usr/local/lib/node_modules/. /usr/local/lib/node_modules/
 RUN \
   apk update && \
   apk add --no-cache nodejs npm tzdata && \
-  ln -s /usr/local/bin/gemini /usr/local/lib/node_modules/@google/gemini-cli/dist/index.js
+  ln -s /usr/local/lib/node_modules/@google/gemini-cli/dist/index.js /usr/local/bin/gemini
 
 ENV GEMINI_API_KEY=${GEMINI_API_KEY}
 
