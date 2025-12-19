@@ -18,7 +18,7 @@ COPY --from=builder /usr/local/lib/node_modules/. /usr/local/lib/node_modules/
 
 RUN \
   apk update && \
-  apk add --no-cache nodejs npm sudo tzdata && \
+  apk add --no-cache curl nodejs npm sudo tzdata && \
   ln -s /usr/local/lib/node_modules/@google/gemini-cli/dist/index.js /usr/local/bin/gemini
 
 RUN adduser -D $USER && \
