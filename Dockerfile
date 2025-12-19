@@ -28,3 +28,5 @@ RUN adduser -D $USER && \
 
 USER $USER
 WORKDIR $HOME
+
+CMD ["tail", "-f", "/dev/null"]
