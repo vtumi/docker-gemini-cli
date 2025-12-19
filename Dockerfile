@@ -11,11 +11,11 @@ FROM alpine:${ALPINE_VERSION}
 ARG GEMINI_API_KEY
 
 COPY --from=builder /usr/local/lib/node_modules/. /usr/local/lib/node_modules/
-COPY --from=builder /usr/local/bin/gemini /usr/local/bin/
 
 RUN set -x \
   && apk update \
   && apk add --no-cache nodejs npm tzdata
+  && ln -s /usr/local/bin/gemini /usr/local/lib/node_modules/@google/gemini-cli/dist/index.js
 
 ENV GEMINI_API_KEY=${GEMINI_API_KEY}
 
