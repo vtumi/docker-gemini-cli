@@ -20,5 +20,3 @@ RUN \
 ENV GEMINI_API_KEY=${GEMINI_API_KEY}
 
 WORKDIR /config
-
-ENTRYPOINT ["gemini"]
