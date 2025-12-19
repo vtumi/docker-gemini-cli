@@ -1,9 +1,6 @@
-FROM node:20-alpine3.22
+FROM node:20-slim
 
 ARG GEMINI_API_KEY
-
-# Install packages
-RUN apk add --no-cache tzdata
 
 RUN npm install -g @google/gemini-cli
 
